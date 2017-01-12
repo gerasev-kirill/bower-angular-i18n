@@ -6,11 +6,11 @@ def convertNgLocale(fpath):
         data = f.read()
     data = data.replace(
         'angular.module("ngLocale", [], ["$provide", function($provide) {',
-        'angular.module("ngLocale").config(["$localeDynamic", function($localeDynamic) {'
+        'angular.module("ngLocale").config(["$localeDynamicProvider", function($localeDynamicProvider) {'
     )
     data = data.replace(
         '$provide.value("$locale", ',
-        '$localeDynamic.registerLocale('
+        '$localeDynamicProvider.registerLocale('
     )
     with open(fpath, 'w') as f:
         f.write(data)
