@@ -1,7 +1,7 @@
 'use strict';
-angular.module("ngLocale", [], ["$provide", function($provide) {
+angular.module("ngLocale").config(["$localeDynamicProvider", function($localeDynamicProvider) {
 var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
-$provide.value("$locale", {
+$localeDynamicProvider.registerLocale({
   "DATETIME_FORMATS": {
     "AMPMS": [
       "\u0642\u0628\u0644\u200c\u0627\u0632\u0638\u0647\u0631",

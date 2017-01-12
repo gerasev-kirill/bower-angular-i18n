@@ -1,5 +1,5 @@
 'use strict';
-angular.module("ngLocale", [], ["$provide", function($provide) {
+angular.module("ngLocale").config(["$localeDynamicProvider", function($localeDynamicProvider) {
 var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
 function getDecimals(n) {
   n = n + '';
@@ -19,7 +19,7 @@ function getVF(n, opt_precision) {
   return {v: v, f: f};
 }
 
-$provide.value("$locale", {
+$localeDynamicProvider.registerLocale({
   "DATETIME_FORMATS": {
     "AMPMS": [
       "\u04d5\u043c\u0431\u0438\u0441\u0431\u043e\u043d\u044b \u0440\u0430\u0437\u043c\u04d5",
