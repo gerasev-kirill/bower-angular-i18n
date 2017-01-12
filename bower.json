@@ -1,7 +1,10 @@
 {
   "name": "angular-i18n",
-  "version": "1.6.2-build.5236+sha.74e232d",
+  "version": "17.1.0",
   "license": "MIT",
+  "main":[
+    "ngLocaleDynamic.js"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
