@@ -186,6 +186,15 @@ angular.module('ngLocale', [])
                 else
                     setLocale($locale, getDefaultLocale())
                 return
+
+            localeDynamic.getLocale = (localeId)->
+                if localeId == 'cz'
+                    localeId = 'cs'
+                if LOCALE_DATA.hasOwnProperty(localeId)
+                    return LOCALE_DATA[localeId]
+                else
+                    return getDefaultLocale()
+        
         localeDynamic
 
 

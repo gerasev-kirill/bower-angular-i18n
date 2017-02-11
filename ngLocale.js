@@ -131,6 +131,16 @@
             setLocale($locale, getDefaultLocale());
           }
         };
+        localeDynamic.getLocale = function(localeId) {
+          if (localeId === 'cz') {
+            localeId = 'cs';
+          }
+          if (LOCALE_DATA.hasOwnProperty(localeId)) {
+            return LOCALE_DATA[localeId];
+          } else {
+            return getDefaultLocale();
+          }
+        };
       }
       return localeDynamic;
     };
